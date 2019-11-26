@@ -22,25 +22,3 @@ jobs:
         run: yarn
       - name: Check code on ci
         run: yarn lint:check && yarn prettier:check
-  action-vpn:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Install Open VPN
-        run: sudo apt-get install openvpn
-      - name: Connect-VPN
-        uses: ./
-        id: connect_vpn
-        with:
-          PING_URL: '10.56.7.99'
-          FILE_OVPN: '.github/vpn/config.ovpn'
-          SECRET: ${{ secrets.SECRET_USERNAME_PASSWORD }}
-        env:
-          CA_CRT: ${{ secrets.CA_CRT }}
-          USER_CRT: ${{ secrets.USER_CRT }}
-          USER_KEY: ${{ secrets.USER_KEY }}
-      - name: kill vpn
-        if: always()
-        run: ls -la && sudo killall openvpn   
-      - name: Check Connect VPN
-        run: echo ${{ steps.connect_vpn.outputs.STATUS }}
