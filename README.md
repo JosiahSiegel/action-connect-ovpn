@@ -4,7 +4,7 @@ This action is a connect ovpn script
 
 ## Example file `.ovpn` to connect vpn
 
-[Test.ovpn](./test.ovpn)
+[Test.ovpn](./test.ovpn) and [setup file](#Example-prepare-file-.ovpn)
 
 ## Configuration with With
 
@@ -55,10 +55,36 @@ example.
         env:
           CA_CRT: ${{ secrets.CA_CRT}}
           USER_CRT: ${{ secrets.USER_CRT }}
-          USER_KEY: ${{ secrets.USER_KEY }} 
+          USER_KEY: ${{ secrets.USER_KEY }}
       - name: Check Connect VPN
         run: echo ${{ steps.connect_vpn.outputs.STATUS }}
       - name: kill vpn
         if: always()
-        run: ls -la && sudo killall openvpn           
+        run: sudo killall openvpn
 ```
+
+## How to prepare file .ovpn
+
+### Step
+
+1. Copy data inside tag 
+<ca></ca>
+<cert></cert>
+<key></key>
+to encode base64 after that save to secret env github actions
+
+2. Remove tag 
+<ca></ca>
+<cert></cert>
+<key></key> 
+and replace to 
+ca ca.crt
+cert user.crt
+key user.key
+
+3. If open vpn have username and password please encode base64 after that save to secret env github actions
+format username password
+username-vpn
+password-vpn
+
+4. If open vpn have tag <tls></tls> please make step 1 and 2
