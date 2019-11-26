@@ -68,15 +68,15 @@ example.
 ### Step
 
 1. Copy data inside tag 
-<ca></ca>
-<cert></cert>
-<key></key>
+`<ca></ca>`
+`<cert></cert>`
+`<key></key>`
 to encode base64 after that save to secret env github actions
 
 2. Remove tag 
-<ca></ca>
-<cert></cert>
-<key></key> 
+`<ca></ca>`
+`<cert></cert>`
+`<key></key> `
 and replace to 
 ca ca.crt
 cert user.crt
@@ -87,4 +87,4 @@ format username password
 username-vpn
 password-vpn
 
-4. If open vpn have tag <tls></tls> please make step 1 and 2
+4. If open vpn have tag `<tls></tls>` please make step 1 and 2
