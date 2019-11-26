@@ -11,12 +11,12 @@ This action is a connect ovpn script
 The following settings must be passed as environment variables as shown in the
 example.
 
-| Key         | Value                                                                                                                           | Suggested Type | Required | Default |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------- | -------- | ------- |
-| `FILE_OVPN` | Location file open vpn and .                                                                                                    | `env`          | **Yes**  | N/A     |
-| `PING_URL`  | URL for check status vpn connect pass or fail                                                                                   | `env`          | **Yes**  | N/A     |
-| `SECRET`    | Username password for access vpn`(Encode base 64 before set secret.)`[How to encode base 64 ?](https://www.base64encode.org/).  | `secret env`   | No       | N/A     |
-| `TLS_KEY`   | Tls-crypt for access vpn `(Encode base 64 before set secret.)`[How to encode base 64 ?](https://www.base64encode.org/).         | `secret env`   | No       | N/A     |
+| Key         | Value                                                                                                                           | Suggested Type | Required | Default         |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------- | -------- | --------------- |
+| `FILE_OVPN` | Location file open vpn and .                                                                                                    | `env`          | **Yes**  | `./config.ovpn` |
+| `PING_URL`  | URL for check status vpn connect pass or fail                                                                                   | `env`          | **Yes**  | `127.0.0.1`     |
+| `SECRET`    | Username password for access vpn`(Encode base 64 before set secret.)`[How to encode base 64 ?](https://www.base64encode.org/).  | `secret env`   | No       | `''`            |
+| `TLS_KEY`   | Tls-crypt for access vpn `(Encode base 64 before set secret.)`[How to encode base 64 ?](https://www.base64encode.org/).         | `secret env`   | No       | `''`            |
 
 ## Configuration with Env
 
