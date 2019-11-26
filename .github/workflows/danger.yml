@@ -1,0 +1,41 @@
+name: Danger
+
+on: pull_request
+
+jobs:
+  danger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+      - name: Get cache dependencies package.json
+        uses: actions/cache@preview
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Get cache dependencies ruby
+        uses: actions/cache@preview
+        id: cache-ruby
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+      - name: Install yarn
+        run: yarn
+      - name: Install bundler
+        run: gem install bundler
+      - name: Install path bundle
+        if: steps.cache-ruby.outputs.cache-hit != 'true'
+        run: bundle install --path vendor/bundle
+      - name: Execute danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bundle --path vendor/bundle
+          bundle exec danger

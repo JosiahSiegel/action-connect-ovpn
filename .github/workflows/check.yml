@@ -1,0 +1,24 @@
+name: Check style code
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Get cache dependencies package.json
+        uses: actions/cache@preview
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install yarn
+        run: yarn
+      - name: Check code on ci
+        run: yarn lint:check && yarn prettier:check

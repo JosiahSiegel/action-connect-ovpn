@@ -1,0 +1,31 @@
+{
+  "name": "action-connect-ovpn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/golfzaptw/action-connect-ovpn.git",
+  "author": "Patawee Boonsongsri <psgolf16@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "ncc build index.js",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint . --color",
+    "prettier": "prettier --write '**/*.js'",
+    "prettier:check": "prettier --list-different '**/*.js'"
+  },
+  "devDependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/github": "^1.1.0",
+    "@zeit/ncc": "^0.20.5",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "path": "^0.12.7",
+    "ping": "^0.2.2",
+    "prettier": "^1.19.1",
+    "shelljs.exec": "^1.1.8"
+  }
+}

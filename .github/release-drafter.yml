@@ -1,0 +1,21 @@
+name-template: 'Release v$NEXT_PATCH_VERSION 🌈'
+tag-template: '$NEXT_PATCH_VERSION'
+branches: 'master'
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'actions: new feature'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'action: fix'
+      - 'actions: bug'
+      - 'actions: bugfix'
+  - title: '🧰 Maintenance'
+    labels:
+      - 'chore: documentation'
+      - 'chore: enhancement'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+template: |
+  ## Changes
+
+  $CHANGES
