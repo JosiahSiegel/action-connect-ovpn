@@ -55,7 +55,10 @@ example.
         env:
           CA_CRT: ${{ secrets.CA_CRT}}
           USER_CRT: ${{ secrets.USER_CRT }}
-          USER_KEY: ${{ secrets.USER_KEY }}          
+          USER_KEY: ${{ secrets.USER_KEY }} 
       - name: Check Connect VPN
         run: echo ${{ steps.connect_vpn.outputs.STATUS }}
+      - name: kill vpn
+        if: always()
+        run: ls -la && sudo killall openvpn           
 ```
