@@ -8,7 +8,7 @@ try {
   // Get input defined in action metadata file
   const pingURL = core.getInput('PING_URL')
   const fileOVPN = core.getInput('FILE_OVPN')
-  const secret = core.getInput('SECRET_ACCESS')
+  const secret = core.getInput('SECRET')
   const tlsKey = core.getInput('TLS_KEY')
 
   if (process.env.CA_CRT == null) {

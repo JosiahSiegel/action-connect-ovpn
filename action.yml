@@ -4,7 +4,7 @@ branding:
   icon: 'cast'
   color: 'green'
 inputs:
-  SECRET_ACCESS:
+  SECRET:
     description: 'Username and password for access vpn'
     required: false
     default: ''
