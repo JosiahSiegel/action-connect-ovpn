@@ -39,3 +39,10 @@ jobs:
         run: |
           bundle --path vendor/bundle
           bundle exec danger
+      - name: Auto reviews branches
+        uses: golfzaptw/action-auto-reviews-from-branches@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+          EVENT_TYPE: APPROVE
+          BRANCHES: release/*
+          AUTHOR: 'dependabot-preview[bot], dependabot[bot], golfzaptw'
