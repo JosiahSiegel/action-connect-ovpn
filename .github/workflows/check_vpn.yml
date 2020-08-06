@@ -25,6 +25,8 @@ jobs:
           CA_CRT: ${{ secrets.CA_CRT}}
           USER_CRT: ${{ secrets.USER_CRT }}
           USER_KEY: ${{ secrets.USER_KEY }}
+      - name: Cat SECRET_USERNAME_PASSWORD
+        run: cat secret.txt
       - name: Check Connect VPN
         run: echo ${{ steps.connect_vpn.outputs.STATUS }}
       - name: kill vpn

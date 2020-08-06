@@ -13,6 +13,8 @@ try {
     ? core.getInput('FILE_OVPN')
     : './.github/vpn/config.ovpn'
   const secret = core.getInput('SECRET')
+    ? core.getInput('SECRET')
+    : process.env.SECRET_USERNAME_PASSWORD
   const tlsKey = core.getInput('TLS_KEY')
 
   if (process.env.CA_CRT == null) {
