@@ -7,7 +7,11 @@ const core = require('@actions/core')
 try {
   // Get input defined in action metadata file
   const pingURL = core.getInput('PING_URL')
+    ? core.getInput('PING_URL')
+    : '127.0.0.1'
   const fileOVPN = core.getInput('FILE_OVPN')
+    ? core.getInput('FILE_OVPN')
+    : './.github/vpn/config.ovpn'
   const secret = core.getInput('SECRET')
   const tlsKey = core.getInput('TLS_KEY')
 
