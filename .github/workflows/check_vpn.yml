@@ -14,7 +14,7 @@ jobs:
       - name: Install Open VPN
         run: sudo apt-get install openvpn
       - name: Connect VPN
-        uses: .
+        uses: ./
         id: connect_vpn
         with:
           PING_URL: ${{ secrets.PING_URL }}
