@@ -24,7 +24,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "path": "^0.12.7",
-    "ping": "^0.2.2",
+    "ping": "^0.2.3",
     "prettier": "^1.19.1",
     "shelljs.exec": "^1.1.8"
   }
