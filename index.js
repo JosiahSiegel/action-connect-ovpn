@@ -16,6 +16,8 @@ try {
     ? core.getInput('SECRET')
     : process.env.SECRET_USERNAME_PASSWORD
   const tlsKey = core.getInput('TLS_KEY')
+    ? core.getInput('TLS_KEY')
+    : process.env.TLS_KEY
 
   if (process.env.CA_CRT == null) {
     core.setFailed(`Can't get ca cert please add CA_CRT in secret`)
