@@ -61,7 +61,7 @@ try {
       timeout: 15,
       min_reply: 15,
     })
-    .then(function(res) {
+    .then(function (res) {
       if (res.alive) {
         core.info('Connect vpn passed')
         core.setOutput('STATUS', true)
