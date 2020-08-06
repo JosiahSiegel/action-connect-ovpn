@@ -6,18 +6,18 @@ const core = require('@actions/core')
 
 try {
   // Get input defined in action metadata file
-  const pingURL = core.getInput('PING_URL')
-    ? core.getInput('PING_URL')
+  const pingURL = core.getInput('PING_URL').trim()
+    ? core.getInput('PING_URL').trim()
     : '127.0.0.1'
-  const fileOVPN = core.getInput('FILE_OVPN')
-    ? core.getInput('FILE_OVPN')
+  const fileOVPN = core.getInput('FILE_OVPN').trim()
+    ? core.getInput('FILE_OVPN').trim()
     : './.github/vpn/config.ovpn'
-  const secret = core.getInput('SECRET')
-    ? core.getInput('SECRET')
-    : process.env.SECRET_USERNAME_PASSWORD
-  const tlsKey = core.getInput('TLS_KEY')
-    ? core.getInput('TLS_KEY')
-    : process.env.TLS_KEY
+  const secret = core.getInput('SECRET').trim()
+    ? core.getInput('SECRET').trim()
+    : process.env.SECRET_USERNAME_PASSWORD.trim()
+  const tlsKey = core.getInput('TLS_KEY').trim()
+    ? core.getInput('TLS_KEY').trim()
+    : process.env.TLS_KEY.trim()
 
   if (process.env.CA_CRT == null) {
     core.setFailed(`Can't get ca cert please add CA_CRT in secret`)
@@ -55,9 +55,9 @@ try {
     createFile('tls.key', tlsKey)
   }
 
-  createFile('ca.crt', process.env.CA_CRT)
-  createFile('user.crt', process.env.USER_CRT)
-  createFile('user.key', process.env.USER_KEY)
+  createFile('ca.crt', process.env.CA_CRT.trim())
+  createFile('user.crt', process.env.USER_CRT.trim())
+  createFile('user.key', process.env.USER_KEY.trim())
 
   if (exec(`sudo openvpn --config ${finalPath} --daemon`).code !== 0) {
     core.setFailed(`Can't setup config ${finalPath}`)
