@@ -4,7 +4,7 @@ This action is a connect ovpn script
 
 ## Example file `.ovpn` to connect vpn
 
-[Test.ovpn](./test.ovpn) and [setup file](#Example-prepare-file-.ovpn)
+[Example.ovpn](./example.ovpn) and [setup file](#Example-prepare-file-.ovpn)
 
 ## Configuration with With
 
