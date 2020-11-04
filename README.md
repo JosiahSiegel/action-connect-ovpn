@@ -67,24 +67,28 @@ example.
 
 ### Step
 
-1. Copy data inside tag 
+1. Copy the data inside the tags
 `<ca></ca>`
 `<cert></cert>`
 `<key></key>`
-to encode base64 after that save to secret env github actions
+and encode those values to base64. Then save those values (without a new line!) to the secrets in github actions
 
-2. Remove tag 
+2. In the .ovpn file in your repo, remove the tags
 `<ca></ca>`
 `<cert></cert>`
 `<key></key> `
-and replace to 
+and replace the values with
+```
 ca ca.crt
 cert user.crt
 key user.key
+```
 
-3. If open vpn have username and password please encode base64 after that save to secret env github actions
+This will allow the values to be filled in from Github secrets.
+
+3. If your open vpn configuration has a username and password please encode those in base64. After that, save the values in the github actions secrets.
 format username password
 username-vpn
 password-vpn
 
-4. If open vpn have tag `<tls></tls>` please make step 1 and 2
+4. If open vpn have tag `<tls></tls>` please repeat step 1 and 2 for the TLS records.
