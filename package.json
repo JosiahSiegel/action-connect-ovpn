@@ -1,6 +1,6 @@
 {
   "name": "action-connect-ovpn",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "main": "index.js",
   "repository": "https://github.com/golfzaptw/action-connect-ovpn.git",
   "author": "Patawee Boonsongsri <psgolf16@gmail.com>",
