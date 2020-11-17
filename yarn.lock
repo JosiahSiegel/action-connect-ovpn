@@ -1069,10 +1069,10 @@ pify@^2.0.0:
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
   integrity sha1-7RQaasBDqEnqWISY59yosVMw6Qw=
 
-ping@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/ping/-/ping-0.2.3.tgz#352f6a6e3343b69a424f4f52f86c66c7d88e884d"
-  integrity sha512-UiwPl9kpzYIE0iz+EUSjISoVCyg44YckaT3BQ60j4xYuRrxGKH4w3ICSyw6xe3va2zgzD9T0yB8h220PM0Elhg==
+ping@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/ping/-/ping-0.3.0.tgz#b07e84f87ea4284236066b1a1d788a8cd7dad4c6"
+  integrity sha512-lstnoVCoJa4u89vZveHCbl9Vpk/E65wYyLWRSJOp/Az/fDuaj7W+Oc5LPvKpoibfduD31F0MJwKniCBSZyncfA==
   dependencies:
     q "1.x"
     underscore "^1.8.3"
