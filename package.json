@@ -13,7 +13,7 @@
     "prettier:check": "prettier --list-different '**/*.js'"
   },
   "devDependencies": {
-    "@actions/core": "^1.2.6",
+    "@actions/core": "^1.2.7",
     "@actions/github": "^4.0.0",
     "@zeit/ncc": "^0.22.3",
     "eslint": "^7.21.0",
