@@ -1,0 +1,28 @@
+name: 'Connect-VPN'
+description: 'Connect VPN'
+branding:
+  icon: 'cast'
+  color: 'green'
+inputs:
+  SECRET:
+    description: 'Username and password for access vpn'
+    required: false
+    default: ''
+  TLS_KEY:
+    description: 'User key for access vpn'
+    required: false
+    default: ''
+  PING_URL:
+    description: 'For check success or fail'
+    required: true
+    default: '127.0.0.1'
+  FILE_OVPN:
+    description: 'Location file open vpn'
+    required: true
+    default: './config.ovpn'
+outputs:
+  STATUS:
+    description: 'Status for check connect vpn'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
