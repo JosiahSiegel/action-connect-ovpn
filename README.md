@@ -1,3 +1,5 @@
+<div align="center"><h1>THIS REPO IS DEPRECATED</h1></div>
+
 <div align="center"><h1>Actions Connect Open VPN</h1></div>
 
 This action is a connect ovpn script
