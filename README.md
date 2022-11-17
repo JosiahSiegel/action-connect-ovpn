@@ -1,4 +1,4 @@
-<div align="center"><h1>THIS REPO IS DEPRECATED</h1></div>
+<div align="center"><h1>:no_entry: THIS REPO IS DEPRECATED :no_entry:</h1></div>
 
 <div align="center"><h1>Actions Connect Open VPN</h1></div>
 
