@@ -1,24 +1,24 @@
-# version: 2
-# updates:
-# - package-ecosystem: npm
-#   directory: "/"
-#   schedule:
-#     interval: monthly
-#     time: "22:00"
-#   open-pull-requests-limit: 10
-#   labels:
-#   - "chore: dependencies"
-#   - "status: Done"
-#   - "status: Wait For Review"
-#   ignore:
-#   - dependency-name: eslint-config-standard
-#     versions:
-#     - 16.0.2
-#   - dependency-name: eslint-config-prettier
-#     versions:
-#     - 7.1.0
-#     - 7.2.0
-#   - dependency-name: eslint
-#     versions:
-#     - 7.16.0
-#     - 7.19.0
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "22:00"
+  open-pull-requests-limit: 10
+  labels:
+  - "chore: dependencies"
+  - "status: Done"
+  - "status: Wait For Review"
+  ignore:
+  - dependency-name: eslint-config-standard
+    versions:
+    - 16.0.2
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 7.1.0
+    - 7.2.0
+  - dependency-name: eslint
+    versions:
+    - 7.16.0
+    - 7.19.0
