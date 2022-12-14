@@ -25,7 +25,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "path": "^0.12.7",
     "ping": "^0.4.2",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "shelljs.exec": "^1.1.8"
   }
 }
