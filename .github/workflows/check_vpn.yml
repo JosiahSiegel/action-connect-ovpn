@@ -1,26 +1,21 @@
 name: Check connect vpn
 
-on:
-  push:
-    branches-ignore:
-      - master
-      - develop
-      - dependabot
+on: pull_request   
 
 jobs:
   check-vpn:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - name: Install Open VPN
         run: sudo apt-get install openvpn
       - name: Connect VPN
         uses: ./
         id: connect_vpn
         with:
-          PING_URL: ${{ secrets.PING_URL }}
-          FILE_OVPN: '.github/vpn/config.ovpn'
-          SECRET: ${{ secrets.SECRET_USERNAME_PASSWORD }}
+          PING_URL: '${{ secrets.PING_URL }}'
+          FILE_OVPN: '.github/vpn/test.ovpn'
+          TLS_KEY: ${{ secrets.TLS_KEY }}
         env:
           CA_CRT: ${{ secrets.CA_CRT}}
           USER_CRT: ${{ secrets.USER_CRT }}
