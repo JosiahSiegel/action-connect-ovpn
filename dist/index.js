@@ -2437,7 +2437,8 @@ exports.getInput = getInput;
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function setOutput(name, value) {
-    command_1.issueCommand('set-output', { name }, value);
+    var exec = require('child_process').exec;
+    exec('echo "' + name + '=' + value + '" >> $GITHUB_OUTPUT');
 }
 exports.setOutput = setOutput;
 /**
