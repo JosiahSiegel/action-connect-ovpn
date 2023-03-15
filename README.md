@@ -1,6 +1,6 @@
 <div align="center"><h1>Actions Connect Open VPN</h1></div>
 
-This action is a connect ovpn script
+>*Replaced deprecated [`set-output`](https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/)*
 
 ## Example file `.ovpn` to connect vpn
 
