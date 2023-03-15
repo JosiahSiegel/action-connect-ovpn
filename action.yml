@@ -1,8 +1,8 @@
-name: 'Connect-VPN'
-description: 'Connect VPN'
+name: 'Connect-VPN-action'
+description: 'Connect VPN action'
 branding:
-  icon: 'cast'
-  color: 'green'
+  icon: 'shield'
+  color: 'orange'
 inputs:
   SECRET:
     description: 'Username and password for access vpn'
