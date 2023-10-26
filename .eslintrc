@@ -1,5 +1,5 @@
 {
-  "extends": ["standard", "prettier"],
+  "extends": ["eslint:recommended", "plugin:n/recommended", "standard", "prettier"],
   "rules": {
     "no-unused-vars": 2,
     "no-unused-expressions": 0,
