@@ -4,7 +4,7 @@
 
 ## Example file `.ovpn` to connect vpn
 
-[Example.ovpn](./example.ovpn) and [setup file](#Example-prepare-file-.ovpn)
+[Example.ovpn](./example.ovpn)
 
 ## Configuration with With
 
