@@ -2,6 +2,8 @@
 
 >*Replaced deprecated [`set-output`](https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/)*
 
+> v2 switches to openvpn CLI for stability
+
 ## Example file `.ovpn` to connect vpn
 
 [Example.ovpn](./example.ovpn)
