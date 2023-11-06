@@ -58,7 +58,7 @@ runs:
       run: |
         sleep 5
         if ping -c 2 $PING_URL > /dev/null 2>&1; then
-          echo "vpn-status='true'" >> $GITHUB_OUTPUT
+          echo "vpn-status=true" >> $GITHUB_OUTPUT
         else
-          echo "vpn-status='false'" >> $GITHUB_OUTPUT
+          echo "vpn-status=false" >> $GITHUB_OUTPUT
         fi
