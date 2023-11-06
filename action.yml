@@ -23,6 +23,7 @@ inputs:
 outputs:
   STATUS:
     description: 'Status for check connect vpn'
+    value: ${{ steps.vpn_status.outputs.vpn-status }}
 runs:
   using: "composite"
   steps:
@@ -48,10 +49,16 @@ runs:
         echo "$USER_KEY" | base64 -d > user.key
         echo "$SECRET" | base64 -d > secret.txt
         sudo openvpn --config ${{ inputs.FILE_OVPN }} --daemon
+
+    - name: VPN Status
+      id: vpn_status
+      env:
+        PING_URL: ${{ inputs.PING_URL }}
+      shell: bash
+      run: |
         sleep 5
-        if ping -c 2 ${{ inputs.PING_URL }} &> /dev/null
-        then
-          echo "STATUS='true'" >> $GITHUB_OUTPUT
+        if ping -c 2 $PING_URL > /dev/null 2>&1; then
+          echo "vpn-status='true'" >> $GITHUB_OUTPUT
         else
-          echo "STATUS='false'" >> $GITHUB_OUTPUT
+          echo "vpn-status='false'" >> $GITHUB_OUTPUT
         fi
